@@ -2,11 +2,10 @@ import React from 'react';
 import { Form } from '../Form';
 import './header.css'
 
-function Header({ addToList }) {
-
+function Header() {
   return (
     <header>
-      <Form addToList={addToList} />
+      <Form />
     </header>
   )
 }

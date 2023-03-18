@@ -1,4 +1,11 @@
-export const TodoItem = ({ todo, index, deleteOneTodo, updTodoStatus }) => {
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { TodosHelpersContext } from "../../context/TodosContext"
+
+export const TodoItem = ({ todo, index }) => {
+  const { deleteOneTodo, updTodoStatus } = useContext(TodosHelpersContext)
+  const navigate = useNavigate()
+
   return (
     <li className="list-group-item d-flex justify-content-between">
       <span className={todo.status ? "text-decoration-line-through" : ''} >
@@ -18,6 +25,13 @@ export const TodoItem = ({ todo, index, deleteOneTodo, updTodoStatus }) => {
           className="btn btn-success"
         >
           Done
+        </button>
+        <button
+          type="submit"
+          onClick={() => navigate(`/todos/${todo.id}`)}
+          className="btn btn-warning mx-2"
+        >
+          Go deeper
         </button>
       </div>
     </li>)

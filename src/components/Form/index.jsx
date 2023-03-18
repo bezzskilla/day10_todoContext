@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { TodosHelpersContext } from '../../context/TodosContext'
 
-export const Form = ({ addToList }) => {
+export const Form = () => {
+  const { addToList } = useContext(TodosHelpersContext)
   const [value, setValue] = useState('')
 
   const handleSumbit = (event) => {

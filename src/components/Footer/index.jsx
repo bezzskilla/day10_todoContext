@@ -8,4 +8,3 @@ const Footer = () => {
 }
 
 export const MemoFooter = React.memo(Footer)
-// React.memo - HOC, который исключает ререндер в случае ререндера родительского компонента
